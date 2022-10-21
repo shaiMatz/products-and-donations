@@ -1,0 +1,201 @@
+{
+    "Data": {
+        "LandingPages4Products": [
+            {
+                "RowID": 6,
+                "PageGUID": "23ddsadffdsfdsf                         ",
+                "MainInfoGuid": ": d71b4c3b-c489-42b9-b8dd-6caa0168d1e2  ",
+                "PageName": "MyPage",
+                "PageBGcolor": "#efefef   ",
+                "PageCurrencies": "1,2,978             ",
+                "MainPageCurrency": "1  ",
+                "ProductsDrpDwnTitle": "select meal type",
+                "ProductsDrpDwnTitleHe": "",
+                "ShowSaturdayDrpDwn": 1,
+                "SaturdayDrpDwnTitleHe": "",
+                "SaturdayDrpDwnTitle": "select Sturday date",
+                "CloseSiteOnSaturday": 1,
+                "DonationTitleHe": "",
+                "DonationTitle": "doante",
+                "DonationDescriptionHe": "",
+                "DonationDescription": "help us to help others",
+                "HideDonationNames": 0,
+                "LocationsTitleHe": "",
+                "LocationsTitle": "Select a location",
+                "InfoBeforePayButtonHe": "",
+                "InfoBeforePayButton": "info before",
+                "InfoAfterPayButtonHe": "",
+                "InfoAfterPayButton": "info After",
+                "PageExternalCssFile": " ",
+                "HTML_SRC": " ",
+                "HTML_SRCHe": "",
+                "ShowField_email": 1,
+                "IsReq_Field_email": 1,
+                "ShowField_tz": 0,
+                "IsReq_Field_tz": 0,
+                "ShowField_firstname": 1,
+                "IsReq_Field_firstname": 1,
+                "ShowField_lastname": 1,
+                "IsReq_Field_lastname": 1,
+                "ShowField_company": 0,
+                "IsReq_Field_company": 0,
+                "ShowField_street": 1,
+                "IsReq_Field_street": 1,
+                "ShowField_street2": 1,
+                "IsReq_Field_street2": 0,
+                "ShowField_city": 1,
+                "IsReq_Field_city": 1,
+                "ShowField_state": 1,
+                "IsReq_Field_state": 0,
+                "ShowField_country": 1,
+                "IsReq_Field_country": 0,
+                "ShowField_zip": 0,
+                "IsReq_Field_zip": 0,
+                "ShowField_cellphone": 1,
+                "IsReq_Field_cellphone": 1,
+                "ShowField_phone": 0,
+                "IsReq_Field_phone": 0,
+                "ShowField_remark": 1,
+                "IsReq_Field_remark": 0,
+                "ShowField_inhonorlezhotlezecher": 0,
+                "IsReq_Field_inhonorlezhotlezecher": 0,
+                "orgid": 153,
+                "validUPToDate": "2049-01-01T00:00:00",
+                "validUPToDate_Hour": 0
+            }
+        ],
+        "LandingPages4Products_Donation_Items": [
+            {
+                "LandingPages4Products_Donation_Items_Id": 2,
+                "LandingPages4Products_Donation_Items_Amount": 10.0,
+                "LandingPages4Products_Donation_Items_Name": "Food basket",
+                "LandingPages4Products_Donation_Items_NameHe": "אאאא",
+                "LandingPages4ProductsRowId": 6,
+                "orgid": 153
+            },
+            {
+                "LandingPages4Products_Donation_Items_Id": 5,
+                "LandingPages4Products_Donation_Items_Amount": 50.0,
+                "LandingPages4Products_Donation_Items_Name": "5 - Food basket",
+                "LandingPages4Products_Donation_Items_NameHe": "בבבב",
+                "LandingPages4ProductsRowId": 6,
+                "orgid": 153
+            },
+            {
+                "LandingPages4Products_Donation_Items_Id": 6,
+                "LandingPages4Products_Donation_Items_Amount": 5.0,
+                "LandingPages4Products_Donation_Items_Name": "for food",
+                "LandingPages4Products_Donation_Items_NameHe": "גגגגגגגג",
+                "LandingPages4ProductsRowId": 6,
+                "orgid": 153
+            }
+        ],
+        "AllProducts": [
+            {
+                "ProductId": 1004,
+                "ProdName": "כרטיס לערב ראש השנה יום ראשון כט אלול",
+                "ProdNameEng": "Ticket for New Year's Eve, Sunday the 9th of Elul"
+            },
+            {
+                "ProductId": 1005,
+                "ProdName": "כרטיס לילד עד גיל 12 לערב ראש השנה",
+                "ProdNameEng": "A child ticket up to the age of 12 for New Year"
+            },
+            {
+                "ProductId": 1006,
+                "ProdName": "כרטיס לסעודת חג ביום שני בצהרים",
+                "ProdNameEng": "A ticket for a holiday dinner on Monday at noon"
+            },
+            {
+                "ProductId": 1007,
+                "ProdName": "כרטיס לסעודת חג ביום שני בערב",
+                "ProdNameEng": "A ticket for a holiday dinner on Monday evening"
+            },
+            {
+                "ProductId": 1009,
+                "ProdName": "כרטיס לסעודת חג ביום שלישי בצהרים",
+                "ProdNameEng": "A ticket for a holiday dinner on Tuesday at noon"
+            },
+            {
+                "ProductId": 1010,
+                "ProdName": "כרטיס לסעודה מפסקת ערב יום כיפור ",
+                "ProdNameEng": "A ticket for a Yom Kippur evening meal"
+            },
+            {
+                "ProductId": 1011,
+                "ProdName": "כרטיס לסעודת ערב סוכות",
+                "ProdNameEng": "Sukkot dinner ticket"
+            },
+            {
+                "ProductId": 1012,
+                "ProdName": "כרטיס לסעודת יום סוכות",
+                "ProdNameEng": "Ticket for Sukkot meal"
+            },
+            {
+                "ProductId": 1014,
+                "ProdName": "משלוח מנות 1014",
+                "ProdNameEng": "Delivery of parcels 1014"
+            }
+        ],
+        "LandingPages4Products_Items": [
+            {
+                "LandingPages4ProductsId": 6,
+                "ProductId": 1004,
+                "ProdNameHe": "כרטיס לערב ראש השנה יום ראשון כט אלול",
+                "ProdName": "Ticket for New Year's Eve, Sunday the 9th of Elul",
+                "orgid": 153,
+                "Sort": 0,
+                "groupid": 0,
+                "MaxItems": 99,
+                "Price": 0.0000
+            },
+            {
+                "LandingPages4ProductsId": 6,
+                "ProductId": 1005,
+                "ProdNameHe": "כרטיס לילד עד גיל 12 לערב ראש השנה",
+                "ProdName": "A child ticket up to the age of 12 for New Year",
+                "orgid": 153,
+                "Sort": 0,
+                "groupid": 0,
+                "MaxItems": 99,
+                "Price": 0.0000
+            },
+            {
+                "LandingPages4ProductsId": 6,
+                "ProductId": 1006,
+                "ProdNameHe": "כרטיס לסעודת חג ביום שני בצהרים",
+                "ProdName": "A ticket for a holiday dinner on Monday at noon",
+                "orgid": 153,
+                "Sort": 0,
+                "groupid": 0,
+                "MaxItems": 99,
+                "Price": 0.0000
+            }
+        ],
+        "LandingPages4Products_Locations": [
+            {
+                "LandingPages4Products_Location_id": 1,
+                "LandingPages4ProductsRowId": 6,
+                "LocationName": "Location 1",
+                "LocationNameHe": "גדשגדש",
+                "LocationGroupId": 0
+            },
+            {
+                "LandingPages4Products_Location_id": 2,
+                "LandingPages4ProductsRowId": 6,
+                "LocationName": "Location 2",
+                "LocationNameHe": "גדשגשד",
+                "LocationGroupId": 0
+            },
+            {
+                "LandingPages4Products_Location_id": 3,
+                "LandingPages4ProductsRowId": 6,
+                "LocationName": "location3",
+                "LocationNameHe": "מיקום 3",
+                "LocationGroupId": 0
+            }
+        ]
+    },
+    "IsError": false,
+    "ErrMsg": ""
+}
