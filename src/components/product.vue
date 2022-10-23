@@ -3,8 +3,8 @@
     <div class="row">
         <label>
             <input type="checkbox" name="" />
-            <div class="icon-box" @click="saveProduct(); checkIfAllWithAmount()"
-             :class="{iconBox1:selected != 'x 0 = 0$'}">
+            <div class="icon-box" @mouseover="saveProduct()"
+                :class="{iconBox1:selected != 'x 0 = 0$'}">
                 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
                     <symbol id="checkmark" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-miterlimit="10" fill="none"
@@ -68,6 +68,16 @@ export default {
         'allWithAmount'
     ],
     methods: {
+        // saveProduct() {
+
+        // }
+
+        checkChoice() {
+            if (this.selected != 'x 0 = 0$') {
+
+            }
+        },
+
 
         selectA() {
             console.log("selected")
@@ -77,42 +87,51 @@ export default {
             }
         },
         saveProduct() {
-            console.log(this.selectedProductInfo)
-            if (this.selectedProductInfo.includes(this.productName)) {
-                console.log('entered')
-                var index1 = this.selectedProductInfo.indexOf(this.productName);
-                var index2 = this.selectedProductAmount.indexOf(this.selected.text);
-                if (index1 > -1) {
-                    this.selectedProductInfo.splice(index1, 1);
-                    this.selectedProductAmount.splice(index2, 1);
+            if (this.selected != 'x 0 = 0$') {
+                console.log(this.selectedProductInfo)
+                if (this.selectedProductInfo.includes(this.productName)) {
+                    console.log('entered')
+                    var index1 = this.selectedProductInfo.indexOf(this.productName);
+                    if (this.selectedProductAmount[index1] != this.selected.text)
+                        this.selectedProductAmount[index] = this.selected.text
+
                 }
+                else {
+                    this.selectedProductInfo.push(this.productName)
+                    this.selectedProductAmount.push(this.selected.text)
+                }
+                console.log(this.selected)
             }
             else {
-                this.selectedProductInfo.push(this.productName)
-                this.selectedProductAmount.push(this.selected.text)
-            }
-            console.log(this.selected)
+                if (this.selectedProductInfo.includes(this.productName)) {
+                    var index1 = this.selectedProductInfo.indexOf(this.productName);
+                    var index2 = this.selectedProductAmount.indexOf(this.selected.text);
+                    if (index1 > -1) {
+                        this.selectedProductInfo.splice(index1, 1);
+                        this.selectedProductAmount.splice(index2, 1);
+                    }
+                }}
+            },
+            
+            // checkIfAllWithAmount() {
+            //     let amountLen = this.selectedProductAmount.length
+            //     let productLen = this.selectedProductInfo.length
+            //     console.log(this.selectedProductAmount)
+            //     console.log(this.selectedProductInfo)
+            //     console.log("amount:" + amountLen)
+            //     console.log("product:" + productLen)
+
+            //     for (let i = 0; i < amountLen; i++) {
+            //         if (this.selectedProductAmount[i] != null) {
+            //             this.allWithAmount[0] = true
+            //         }
+            //     }
+            //     this.allWithAmount[0] = false
+            // }
 
         },
-        checkIfAllWithAmount() {
-            let amountLen = this.selectedProductAmount.length
-            let productLen = this.selectedProductInfo.length
-            console.log(this.selectedProductAmount)
-            console.log(this.selectedProductInfo)
-            console.log("amount:" + amountLen)
-            console.log("product:" + productLen)
 
-            for (let i = 0; i < amountLen; i++) {
-                if (this.selectedProductAmount[i] != null) {
-                    this.allWithAmount[0] = true
-                }
-            }
-            this.allWithAmount[0] = false
-        }
-
-    },
-
-}
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -126,7 +145,6 @@ export default {
     }
 
     label {
-        cursor: pointer;
         display: flex;
         font-size: 14px;
 
@@ -158,7 +176,7 @@ $grey-5: #fcfcfc;
     left: 20%;
 
     select {
-    
+        cursor: pointer;
         padding: 3px 20px 3px 50px;
         color: #353746;
     }

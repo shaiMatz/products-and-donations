@@ -106,9 +106,14 @@ export default {
             this.donObject = obj
         },
         checkIfAllWithAmount() {
+         
             let amountLen = this.selectedProductAmount.length
             let productLen = this.selectedProductInfo.length
-            console.log(this.selectedProductAmount)
+            if(productLen == 0){
+                this.allWithAmount[0] = false
+            }
+            else
+            {console.log(this.selectedProductAmount)
             console.log(this.selectedProductInfo)
             console.log("amount:" + amountLen)
             console.log("product:" + productLen)
@@ -120,7 +125,7 @@ export default {
                 }
                 else
                     this.allWithAmount[0] = false
-            }
+            }}
 
         }
 
