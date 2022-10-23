@@ -228,13 +228,14 @@ export default {
                 color: #000000;
                 text-align: center;
                 transition: all 0.2s;
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, .12);
                 cursor: pointer;
             }
 
             a.button1:hover {
                 color: #000000;
                 background-color: #ffffff;
-
+                box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.12);
             }
 
             @media all and (max-width:30em) {}
