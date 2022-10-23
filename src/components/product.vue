@@ -3,7 +3,8 @@
     <div class="row">
         <label>
             <input type="checkbox" name="" />
-            <div class="icon-box" @click="saveProduct(); checkIfAllWithAmount()">
+            <div class="icon-box" @click="saveProduct(); checkIfAllWithAmount()"
+             :class="{iconBox1:selected != 'x 0 = 0$'}">
                 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
                     <symbol id="checkmark" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-miterlimit="10" fill="none"
@@ -25,26 +26,26 @@
                 <div class="NOProducts" v-if="$i18n.locale === 'en'">
                     <p>{{$t("amount")}}</p>
                     <select v-model="selected" @click.stop="selectA">
-                        <option selected>0</option>
+                        <option selected>x 0 = 0$</option>
                         <option v-for="n in productName.MaxItems" :key="n" v-bind:value="{ id: n.id, text: n }">
-                            {{ n }}
+                            x {{ n }} = {{productName.Price*selected.text }}$
                         </option>
                     </select>
 
                 </div>
                 <div class="NOProducts" v-else>
 
-                    <select v-model="selected" @click.stop="selectA">
-                        <option selected>0</option>
+                    <select v-model="selected" @click.stop="selectA" class="amountSelect">
+                        <option selected>x 0 = 0$</option>
                         <option v-for="n in productName.MaxItems" :key="n" v-bind:value="{ id: n.id, text: n }">
-                            {{ n }}
+                            x {{ n }} = {{productName.Price*selected.text }}$
                         </option>
                     </select>
                     <span>{{$t("amount")}}</span>
 
                 </div>
                 <div class="priceP">
-                    <span v-if="productName.Price*selected.text+1"> {{productName.Price*selected.text }} $</span>
+                    <span v-if="productName.Price*selected.text+1"> </span>
                     <p v-else> {{$t("price")}} </p>
                 </div>
             </div>
@@ -57,7 +58,7 @@ export default {
     data() {
         return {
             selectedProducts: [],
-            selected: 0
+            selected: 'x 0 = 0$'
         }
     },
     props: [
@@ -98,8 +99,8 @@ export default {
             let productLen = this.selectedProductInfo.length
             console.log(this.selectedProductAmount)
             console.log(this.selectedProductInfo)
-            console.log("amount:"+amountLen)
-            console.log("product:"+productLen)
+            console.log("amount:" + amountLen)
+            console.log("product:" + productLen)
 
             for (let i = 0; i < amountLen; i++) {
                 if (this.selectedProductAmount[i] != null) {
@@ -107,10 +108,6 @@ export default {
                 }
             }
             this.allWithAmount[0] = false
-
-
-
-
         }
 
     },
@@ -154,18 +151,27 @@ $grey-5: #fcfcfc;
 }
 
 .NOProducts {
-    display: flex;
     padding: 10px 20px;
     align-self: center;
     position: absolute;
-    bottom: 70px;
-    left: 18%;
+    bottom: 40px;
+    left: 20%;
+
+    select {
+    
+        padding: 3px 20px 3px 50px;
+        color: #353746;
+    }
 }
 
+
+
 .NOProducts p {
-    padding-right: 10px;
     font-size: 14px;
+    text-align: center;
 }
+
+
 
 .NOProducts span {
     padding-left: 10px;
@@ -177,12 +183,10 @@ $grey-5: #fcfcfc;
     // background-color: #8dc3e7;
     width: fit-content;
     border-radius: 10px;
-    border: 2px solid #35374642;
-    box-shadow: 0px 2px 5px -2px hsla(207, 94%, 79%, 0.25);
-    margin-right: 50%;
-    margin-bottom: 10px;
-    bottom: 0;
-    left: 10px;
+    // border: 2px solid #35374642;
+    // box-shadow: 0px 2px 5px -2px hsla(207, 94%, 79%, 0.25);
+    bottom: 15px;
+    left: 24%;
     padding-bottom: 8px;
 
     span {
@@ -193,6 +197,7 @@ $grey-5: #fcfcfc;
     p {
         font-size: 12px;
         text-align: center;
+        margin: 1px 10px;
     }
 
 }
@@ -266,7 +271,7 @@ $grey-5: #fcfcfc;
     }
 }
 
-.row label input[type="checkbox"]:checked~.icon-box {
+.row label .iconBox1 {
     color: #353746;
     --shadow: 0 0 0 3px var(--card-shadow);
     box-shadow: -10px 20px 30px rgba(0, 0, 0, .12);

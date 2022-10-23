@@ -107,7 +107,7 @@ export default {
         margin-right: auto;
     }
 
-    @media (max-width: 910px) {
+    @media (max-width: 910px)  {
         text-align: center;
         justify-content: center;
 

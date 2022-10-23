@@ -29,8 +29,8 @@
                 <div class="continueB">
                     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
                     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-
-                    <button class="btn btn-2 btn-sep icon-cart" @click="togglePayment()">Summary and Payment</button>
+                    <a @click="togglePayment()" class="button1">Summary and Payment</a>
+                    <!-- <button class="btn btn-2 btn-sep icon-cart" @click="togglePayment()">Summary and Payment</button> -->
                 </div>
                 <p class="errorMsg" v-show="!allWithAmount[0]">Please choose amount first!</p>
             </div>
@@ -211,9 +211,31 @@ export default {
 
             }
 
+            a.button1 {
+                border-radius: 2em;
+                display: inline-block;
+                padding: 0.65em 10.1em;
+                border: 0.2em solid #ffffff;
+                margin: 1.5em 0.3em 0.3em 10px;
+                box-sizing: border-box;
+                text-decoration: none;
+                font-weight: 300;
+                color: #000000;
+                text-align: center;
+                transition: all 0.2s;
+                cursor: pointer;
+            }
+
+            a.button1:hover {
+                color: #000000;
+                background-color: #ffffff;
+
+            }
+
+            @media all and (max-width:30em) {}
+
             .inputGroup {
                 background-color: #fff;
-                width: 100px;
                 height: 50px;
                 text-align: center;
                 padding: 15px 80px 15px 70px;
@@ -268,92 +290,11 @@ export default {
             padding-top: 0;
         }
 
-        .btn {
-            border: none;
-            font-family: 'Lato';
-            font-size: 16px;
-            color: inherit;
-            background: none;
-            cursor: pointer;
-            padding: 10px 20px;
-            display: inline-block;
-            margin: 20px 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-            outline: none;
-            position: relative;
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
-            box-shadow: 0px 2px 10px rgba(0, 0, 0, .12);
-        }
-
-        .btn:after {
-            content: '';
-            position: absolute;
-            z-index: -1;
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
-        }
-
-        /* Pseudo elements for icons */
-        .btn:before {
-            font-family: 'FontAwesome';
-            font-style: normal;
-            font-weight: normal;
-            font-variant: normal;
-            text-transform: none;
-            line-height: 0.5;
-            position: relative;
-            -webkit-font-smoothing: antialiased;
-        }
-
-
-        /* Icon separator */
-        .btn-sep {
-            padding: 15px 135px 15px 145px;
-        }
-
-        .btn-sep:before {
-            background: rgba(0, 0, 0, 0.171);
-        }
-
-
-
-
-        .btn-2 {
-            color: rgba(0, 0, 0, 0.678);
-
-        }
-
-        .btn-2:hover {
-            background: #f1f3f7;
-        }
-
-        .btn-2:active {
-            background: #f1f3f7;
-            top: 2px;
-        }
-
-        .btn-2:before {
-            position: absolute;
-            height: 100%;
-            left: 0;
-            top: 0;
-            line-height: 2.1;
-            font-size: 140%;
-            width: 60px;
-        }
-
-        .icon-cart:before {
-            content: "\f07a";
-        }
-
     }
 
-    @media (max-width: 1200px) {
+
+
+    @media (max-width: 1200px) and (min-width: 550px) {
         .selectBox {
             flex-direction: column;
             align-items: center;
@@ -362,7 +303,7 @@ export default {
 
             .Description {
                 margin: 0;
-                width: 70%;
+                width: 60%;
             }
 
             .Don {
@@ -378,11 +319,145 @@ export default {
         }
 
 
+        .box .selectBox .Don a.button1 {
+            display: block;
+            margin: 0.2em auto;
+            padding: 10px 5px;
 
-     
+        }
+
 
 
 
     }
 }
+
+@media (max-width: 550) and (min-width: 350) {
+    .box .selectBox {
+        flex-direction: column;
+        align-items: center;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .box .selectBox .Description {
+        margin: 0;
+        width: 80%;
+
+    }
+    .box .selectBox .Don p{
+        position: relative;
+        width:inherit;
+        padding: 30px 20px;
+        padding-bottom: 0;
+    }
+    .box .selectBox .Don {
+        width: auto;
+    }
+
+    .box .selectBox .Don .hideClass .inputGroup {
+        width: 85%;
+        padding: 0;
+        padding-top:15px;
+    }
+
+    .box .selectBox .Don #other {
+        width: 85%;
+
+    }
+
+    .box .selectBox .Don a.button1 {
+        display: block;
+        margin: 0.2em auto;
+        padding: 10px 5px;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 550px) {
+    .box .selectBox {
+        flex-direction: column;
+        align-items: center;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .box .selectBox .Description {
+        margin: 0;
+        width: 140%;
+
+    }
+    .box .selectBox .Don p{
+        position: relative;
+        width:inherit;
+        padding: 30px 20px;
+        padding-bottom: 0;
+    }
+    .box .selectBox .Don {
+        width: auto;
+    }
+
+    .box .selectBox .Don .hideClass .inputGroup {
+        width: 100%;
+        padding: 0;
+        padding-top:15px;
+        margin:0;
+        margin-bottom: 20px;
+        height: 70px;
+        min-height: fit-content;
+
+    }
+
+    .box .selectBox .Don #other {
+        width: 100%;
+margin:0;
+    }
+
+    .box .selectBox .Don a.button1 {
+        display: block;
+        margin: 0.2em auto;
+        padding: 10px 5px;
+        margin-right: 20px;
+    }
+}
+
+// 
+//     .selectBox {
+//         flex-direction: column;
+//         align-items: center;
+//         box-shadow: none;
+//         padding: 0;
+
+//         .Description {
+//             margin: 0;
+//             width: 50%;
+//         }
+
+//         .Don {
+//             padding-left: 0;
+//             width: auto;
+
+//             #other {
+//                 width: 50px;
+//             }
+
+//             .hideClass {
+//                 .inputGroup {
+//                     width: 50px;
+//                 }
+//             }
+//         }
+
+//         .hideCl {
+//             padding-top: 100px;
+//         }
+
+//     }
+
+//     .btn-sep {
+//             padding: 15px 13px 15px 15px;
+//         }
+
+
+// }
 </style>
