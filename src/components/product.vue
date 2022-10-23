@@ -269,7 +269,6 @@ $grey-5: #fcfcfc;
 .row label input[type="checkbox"]:checked~.icon-box {
     color: #353746;
     --shadow: 0 0 0 3px var(--card-shadow);
-    border-color: cadetblue;
     box-shadow: -10px 20px 30px rgba(0, 0, 0, .12);
 
     svg {
