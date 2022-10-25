@@ -6,7 +6,7 @@
 
   </header>
 
-  <htmlFile />
+  <htmlFile :productTitle="data[0]" />
   <products v-bind:selected-product-info="selectedProductInfo" :allWithAmount="allWithAmount" :selectedProductAmount="selectedProductAmount" />
   <donations :productTitle="data[0]"  v-bind:selected-product-info="selectedProductInfo"
     :selectedProductAmount="selectedProductAmount" :allWithAmount="allWithAmount" />
@@ -39,5 +39,7 @@ export default {
 </script>
 
 <style>
-
+#maintitle{
+  padding-bottom:50px ;
+}
 </style>

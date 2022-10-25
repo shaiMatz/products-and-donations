@@ -11,11 +11,13 @@
                 <ul v-show="!mobile">
                     <div class="dropdown">
                         <select v-model="$i18n.locale" class="dropbtn">
-                            <option value="en">English</option>
-                            <option value="he">עברית</option>
+                            <option value="en"><router-link :to="{ name: 'en' }">English</router-link></option>
+                            <option value="he"><router-link :to="{ name: 'he' }">עברית</router-link></option>
                         </select>
                     </div>
                 </ul>
+                            <router-view />
+
             </div>
         </nav>
         <div @click="toggleMobileNav" class="menu-btn" v-show="mobile">
@@ -29,8 +31,8 @@
 
                 <div class="dropdown">
                     <select v-model="$i18n.locale" class="dropbtn">
-                        <option value="en">English</option>
-                        <option value="he">עברית</option>
+                        <option value="en"><router-link :to="{ name: 'en' }">English</router-link></option>
+                            <option value="he"><router-link :to="{ name: 'he' }">עברית</router-link></option>
                     </select>
                 </div>
 

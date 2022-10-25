@@ -3,8 +3,7 @@
     <div class="row">
         <label>
             <input type="checkbox" name="" />
-            <div class="icon-box" @mouseover="saveProduct()"
-                :class="{iconBox1:selected != 'x 0 = 0$'}">
+            <div class="icon-box" @mouseover="saveProduct()" :class="{iconBox1:selected != 'x 0 = 0$'}">
                 <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
                     <symbol id="checkmark" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-miterlimit="10" fill="none"
@@ -28,25 +27,25 @@
                     <select v-model="selected" @click.stop="selectA">
                         <option selected>x 0 = 0$</option>
                         <option v-for="n in productName.MaxItems" :key="n" v-bind:value="{ id: n.id, text: n }">
-                            x {{ n }} = {{productName.Price*selected.text }}$
+                            x {{ n }} = {{productName.Price*n }}$
                         </option>
                     </select>
 
                 </div>
                 <div class="NOProducts" v-else>
+                    <span>{{$t("amount")}}</span>
 
                     <select v-model="selected" @click.stop="selectA" class="amountSelect">
                         <option selected>x 0 = 0$</option>
                         <option v-for="n in productName.MaxItems" :key="n" v-bind:value="{ id: n.id, text: n }">
-                            x {{ n }} = {{productName.Price*selected.text }}$
+                            x {{ n }} = {{productName.Price*n }}$
                         </option>
                     </select>
-                    <span>{{$t("amount")}}</span>
 
                 </div>
                 <div class="priceP">
                     <span v-if="productName.Price*selected.text+1"> </span>
-                    <p v-else> {{$t("price")}} </p>
+                    <p v-else :class="{HebrewTforPrice:$i18n.locale === 'he'}"> {{$t("price")}} </p>
                 </div>
             </div>
         </label>
@@ -110,28 +109,29 @@ export default {
                         this.selectedProductInfo.splice(index1, 1);
                         this.selectedProductAmount.splice(index2, 1);
                     }
-                }}
-            },
-            
-            // checkIfAllWithAmount() {
-            //     let amountLen = this.selectedProductAmount.length
-            //     let productLen = this.selectedProductInfo.length
-            //     console.log(this.selectedProductAmount)
-            //     console.log(this.selectedProductInfo)
-            //     console.log("amount:" + amountLen)
-            //     console.log("product:" + productLen)
-
-            //     for (let i = 0; i < amountLen; i++) {
-            //         if (this.selectedProductAmount[i] != null) {
-            //             this.allWithAmount[0] = true
-            //         }
-            //     }
-            //     this.allWithAmount[0] = false
-            // }
-
+                }
+            }
         },
 
-    }
+        // checkIfAllWithAmount() {
+        //     let amountLen = this.selectedProductAmount.length
+        //     let productLen = this.selectedProductInfo.length
+        //     console.log(this.selectedProductAmount)
+        //     console.log(this.selectedProductInfo)
+        //     console.log("amount:" + amountLen)
+        //     console.log("product:" + productLen)
+
+        //     for (let i = 0; i < amountLen; i++) {
+        //         if (this.selectedProductAmount[i] != null) {
+        //             this.allWithAmount[0] = true
+        //         }
+        //     }
+        //     this.allWithAmount[0] = false
+        // }
+
+    },
+
+}
 </script>
 
 <style lang="scss" scoped>
@@ -192,7 +192,7 @@ $grey-5: #fcfcfc;
 
 
 .NOProducts span {
-    padding-left: 10px;
+    padding-left: 51px;
     font-size: 14px;
 }
 
@@ -208,8 +208,8 @@ $grey-5: #fcfcfc;
     padding-bottom: 8px;
 
     span {
-        margin: 1px 10px;
-
+        font-size: 12px;
+        text-align: center;
     }
 
     p {
@@ -217,7 +217,9 @@ $grey-5: #fcfcfc;
         text-align: center;
         margin: 1px 10px;
     }
-
+    .HebrewTforPrice{
+        margin: 1px 30px;
+    }
 }
 
 
@@ -312,6 +314,7 @@ $grey-5: #fcfcfc;
 .row label .icon-box span {
     font-size: 16px;
 }
+
 
 @media (max-width: 790px) {
 

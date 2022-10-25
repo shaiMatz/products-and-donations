@@ -9,7 +9,7 @@
                 <span :class="{HebrewT:$i18n.locale === 'he'}">{{$t("donationDes")}}</span>
             </div>
             <div class="Don" :class="{hideCl:productTitle.HideDonationNames==0}">
-                <p>I am interested in donating:</p>
+                <p :class="{HebrewT:$i18n.locale === 'he'}">{{$t("donatingM")}}</p>
                 <section :class="{hideClass:productTitle.HideDonationNames==0}">
                     <div class="inputGroup" :class="{pressedR:chosen==dataN.LandingPages4Products_Donation_Items_Id}"
                         @click="pressedRadio(dataN.LandingPages4Products_Donation_Items_Id); pressedSaveO(dataN)"
@@ -21,7 +21,7 @@
                 </section>
                 <div v-show="chosen!=data1" :class="{pressedR:chosen==data1}" class="inputGroup" id="other"
                     @click="pressedRadio(data1)">
-                    <span>Other</span>
+                    <span :class="{HebrewT:$i18n.locale === 'he'}">{{$t("other")}}</span>
 
                 </div>
                 <input v-show="chosen==data1" v-model="message" type="number" class="form__input" id="name"
@@ -29,10 +29,10 @@
                 <div class="continueB">
                     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
                     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-                    <a @click="togglePayment()" class="button1">Summary and Payment</a>
+                    <a @click="togglePayment()" class="button1" :class="{HebrewT:$i18n.locale === 'he'}">{{$t("Summary")}}</a>
                     <!-- <button class="btn btn-2 btn-sep icon-cart" @click="togglePayment()">Summary and Payment</button> -->
                 </div>
-                <p class="errorMsg" v-show="!allWithAmount[0]">Please choose amount first!</p>
+                <p class="errorMsg" v-show="!allWithAmount[0]" :class="{HebrewT:$i18n.locale === 'he'}">{{$t("errorAmount")}}</p>
             </div>
 
         </div>
