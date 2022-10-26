@@ -217,7 +217,8 @@ $grey-5: #fcfcfc;
         text-align: center;
         margin: 1px 10px;
     }
-    .HebrewTforPrice{
+
+    .HebrewTforPrice {
         margin: 1px 30px;
     }
 }
@@ -315,11 +316,37 @@ $grey-5: #fcfcfc;
     font-size: 16px;
 }
 
+@media (max-width: 900px) and (min-width: 500px) {
+    .NOProducts span{
+        padding-left: 0;
+        padding-right: 100px;
+    }
+    .NOProducts select{
+        margin-right:100px;
+    }
+}
 
-@media (max-width: 790px) {
+
+@media (max-width: 500px) {
+    .row label .icon-box {
+        width: 100%;
+        height: 300px;
+    }
+
+    .NOProducts span {
+        padding-left: 10%;
+        font-size: 14px;
+    }
 
     .row label {
         padding-left: 0;
+    }
+    .priceP {
+        left: 10%;
+    }
+    .NOProducts {
+        left:3%;
+        
     }
 }
 </style>

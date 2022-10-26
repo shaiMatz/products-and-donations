@@ -9,7 +9,9 @@ import HomeView from './views/HomeView.vue';
 import HelloI18n from './components/HelloI18n.vue';
 export default {
   name: "app",
-  components: { HomeView, HelloI18n }
+  components: { HomeView, HelloI18n },
+
+ 
 }
 </script>
 

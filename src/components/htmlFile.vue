@@ -1,7 +1,7 @@
 <template>
     <div class="box">
         <div class="classHtml" v-html="productTitle.HTML_SRC" v-if="$i18n.locale === 'en'"></div>
-        <div class="classHtml" v-else v-html="productTitle.HTML_SRCHe" ></div>
+        <div  :class="{ HebrewT: $i18n.locale === 'he' }" class="classHtml" v-else v-html="productTitle.HTML_SRCHe" ></div>
 
     </div>
 </template>

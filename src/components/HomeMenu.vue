@@ -7,19 +7,26 @@
                     <img id="logo" src="../assets/amax1-removebg-preview.jpg">
                 </router-link>
             </div>
-            <div class="nav-links">
+            <!-- <div class="nav-links">
                 <ul v-show="!mobile">
                     <div class="dropdown">
                         <select v-model="$i18n.locale" class="dropbtn">
-                            <option value="en"><router-link :to="{ name: 'en' }">English</router-link></option>
-                            <option value="he"><router-link :to="{ name: 'he' }">עברית</router-link></option>
+                            <option value="en" @click="changeLangURL">English</option>
+                            <option value="he">עברית</option>
                         </select>
                     </div>
                 </ul>
-                            <router-view />
-
+            </div> -->
+            <div class="nav-links">
+                <ul v-show="!mobile">
+                    <div class="dropdown">
+                <button class="dropbtn" @click="change('en')">English</button>
+                <button class="dropbtn" @click="change('he')">עברית</button>
+            </div>
+            </ul>
             </div>
         </nav>
+
         <div @click="toggleMobileNav" class="menu-btn" v-show="mobile">
 
             <div class="line line--1"></div>
@@ -29,12 +36,10 @@
         <transition name="mobile-nav">
             <ul class="mobile-nav" v-show="mobileNav">
 
-                <div class="dropdown">
-                    <select v-model="$i18n.locale" class="dropbtn">
-                        <option value="en"><router-link :to="{ name: 'en' }">English</router-link></option>
-                            <option value="he"><router-link :to="{ name: 'he' }">עברית</router-link></option>
-                    </select>
-                </div>
+                <div class="nav-links">
+                <button class="dropbtn" @click="change('en')">English</button>
+                <button class="dropbtn" @click="change('he')">עברית</button>
+            </div>
 
             </ul>
         </transition>
@@ -55,7 +60,8 @@ export default {
             mobile: null,
             mobileNav: null,
             windownWidth: null,
-            locales: ["HE", "EN"]
+            locales: ["HE", "EN"],
+            isOpen: false,
         };
     },
     created() {
@@ -79,6 +85,10 @@ export default {
 
         toggleMobileNav() {
             this.mobileNav = !this.mobileNav;
+        },
+        change(lang) {
+            this.$i18n.locale =lang;
+            this.$router.push('/'+lang);
         }
     },
 
@@ -128,10 +138,6 @@ header {
             ul {
                 margin-right: 32px;
 
-
-                .link:last-child {
-                    margin-right: 0;
-                }
             }
         }
     }
@@ -146,7 +152,6 @@ header {
         color: #000;
         text-decoration: none;
         padding: 10px;
-        margin-right: 20px;
 
         &:hover {
             color: #1eb8b8;
@@ -154,9 +159,6 @@ header {
 
     }
 
-    select:active {
-        border: none;
-    }
 
     .dropdown {
         position: relative;
@@ -249,6 +251,7 @@ header {
         background-color: #303030;
         color: #fff;
         padding: 15px 0;
+        margin:10px 30px;
     }
 
     .mobile-nav-enter-active,
