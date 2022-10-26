@@ -1,38 +1,42 @@
 <template>
     <div class="box" @mouseover="checkIfAllWithAmount">
-        <h2 :class="{HebrewT:$i18n.locale === 'he'}">{{$t("Donation")}}
-            <span>{{productTitle.DonationDescription}}</span>
+        <h2 :class="{ HebrewT: $i18n.locale === 'he' }">{{ $t("Donation") }}
+            <span>{{ productTitle.DonationDescription }}</span>
         </h2>
 
         <div class="selectBox">
             <div class="Description">
-                <span :class="{HebrewT:$i18n.locale === 'he'}">{{$t("donationDes")}}</span>
+                <span :class="{ HebrewT: $i18n.locale === 'he' }">{{ $t("donationDes") }}</span>
             </div>
-            <div class="Don" :class="{hideCl:productTitle.HideDonationNames==0}">
-                <p :class="{HebrewT:$i18n.locale === 'he'}">{{$t("donatingM")}}</p>
-                <section :class="{hideClass:productTitle.HideDonationNames==0}">
-                    <div class="inputGroup" :class="{pressedR:chosen==dataN.LandingPages4Products_Donation_Items_Id}"
+            <div class="Don" :class="{ hideCl: productTitle.HideDonationNames == 0 }">
+                <p :class="{ HebrewTb: $i18n.locale === 'he' }">{{ $t("donatingM") }}</p>
+                <section :class="{ hideClass: productTitle.HideDonationNames == 0 }">
+                    <div class="inputGroup" :class="{ pressedR: chosen == dataN.LandingPages4Products_Donation_Items_Id }"
                         @click="pressedRadio(dataN.LandingPages4Products_Donation_Items_Id); pressedSaveO(dataN)"
                         for="radio1" v-for="(dataN, i) in data" :key="`dataN-${i}`">
-                        <label for="dataN.text" v-show="productTitle.HideDonationNames==0">
-                            {{dataN.LandingPages4Products_Donation_Items_Name}}: </label>
-                        <label for="dataN.text">{{dataN.LandingPages4Products_Donation_Items_Amount}}</label>
+                        <label for="dataN.text" v-show="productTitle.HideDonationNames == 0" v-if="$i18n.locale === 'en'">
+                            {{ dataN.LandingPages4Products_Donation_Items_Name }}: </label>
+                        <label for="dataN.text" v-show="productTitle.HideDonationNames == 0" v-else>
+                            {{ dataN.LandingPages4Products_Donation_Items_NameHe }}: </label>
+                        <label for="dataN.text">{{ dataN.LandingPages4Products_Donation_Items_Amount }}</label>
                     </div>
                 </section>
-                <div v-show="chosen!=data1" :class="{pressedR:chosen==data1}" class="inputGroup" id="other"
+                <div v-show="chosen != data1" :class="{ pressedR: chosen == data1 }" class="inputGroup" id="other"
                     @click="pressedRadio(data1)">
-                    <span :class="{HebrewT:$i18n.locale === 'he'}">{{$t("other")}}</span>
+                    <span :class="{ HebrewT: $i18n.locale === 'he' }">{{ $t("other") }}</span>
 
                 </div>
-                <input v-show="chosen==data1" v-model="message" type="number" class="form__input" id="name"
+                <input v-show="chosen == data1" v-model="message" type="number" class="form__input" id="name"
                     placeholder="Type another amount" required="" />
                 <div class="continueB">
                     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
                     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-                    <a @click="togglePayment()" class="button1" :class="{HebrewT:$i18n.locale === 'he'}">{{$t("Summary")}}</a>
+                    <a @click="togglePayment()" class="button1"
+                        :class="{ HebrewTbutton: $i18n.locale === 'he' }">{{ $t("Summary") }}</a>
                     <!-- <button class="btn btn-2 btn-sep icon-cart" @click="togglePayment()">Summary and Payment</button> -->
                 </div>
-                <p class="errorMsg" v-show="!allWithAmount[0]" :class="{HebrewT:$i18n.locale === 'he'}">{{$t("errorAmount")}}</p>
+                <p class="errorMsg" v-show="!allWithAmount[0]" :class="{ HebrewTb: $i18n.locale === 'he' }">
+                    {{ $t("errorAmount") }}</p>
             </div>
 
         </div>
@@ -106,26 +110,27 @@ export default {
             this.donObject = obj
         },
         checkIfAllWithAmount() {
-         
+
             let amountLen = this.selectedProductAmount.length
             let productLen = this.selectedProductInfo.length
-            if(productLen == 0){
+            if (productLen == 0) {
                 this.allWithAmount[0] = false
             }
-            else
-            {console.log(this.selectedProductAmount)
-            console.log(this.selectedProductInfo)
-            console.log("amount:" + amountLen)
-            console.log("product:" + productLen)
+            else {
+                console.log(this.selectedProductAmount)
+                console.log(this.selectedProductInfo)
+                console.log("amount:" + amountLen)
+                console.log("product:" + productLen)
 
-            for (let i = 0; i < amountLen; i++) {
-                console.log(this.selectedProductAmount[i])
-                if (this.selectedProductAmount[i] != null) {
-                    this.allWithAmount[0] = true
+                for (let i = 0; i < amountLen; i++) {
+                    console.log(this.selectedProductAmount[i])
+                    if (this.selectedProductAmount[i] != null) {
+                        this.allWithAmount[0] = true
+                    }
+                    else
+                        this.allWithAmount[0] = false
                 }
-                else
-                    this.allWithAmount[0] = false
-            }}
+            }
 
         }
 
@@ -236,6 +241,18 @@ export default {
                 color: #000000;
                 background-color: #ffffff;
                 box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.12);
+            }
+
+            .HebrewTb {
+                padding-right: 170px;
+                direction: rtl;
+                font-family: 'Open Sans Hebrew';
+            }
+
+            a.HebrewTbutton {
+                direction: rtl;
+                font-family: 'Open Sans Hebrew';
+                margin: 10px 30px;
             }
 
             @media all and (max-width:30em) {}
@@ -351,12 +368,14 @@ export default {
         width: 80%;
 
     }
-    .box .selectBox .Don p{
+
+    .box .selectBox .Don p {
         position: relative;
-        width:inherit;
+        width: inherit;
         padding: 30px 20px;
         padding-bottom: 0;
     }
+
     .box .selectBox .Don {
         width: auto;
     }
@@ -364,7 +383,7 @@ export default {
     .box .selectBox .Don .hideClass .inputGroup {
         width: 85%;
         padding: 0;
-        padding-top:15px;
+        padding-top: 15px;
     }
 
     .box .selectBox .Don #other {
@@ -377,6 +396,16 @@ export default {
         margin: 0.2em auto;
         padding: 10px 5px;
         margin-right: 20px;
+    }
+
+    .box .selectBox .Don a.HebrewTbutton {
+        margin: 10px 30px;
+    }
+
+    .box .selectBox .Don .HebrewTb {
+        text-align: center;
+        padding-right: 0;
+        padding-left: 100px;
     }
 }
 
@@ -390,15 +419,17 @@ export default {
 
     .box .selectBox .Description {
         margin: 0;
-        width: 140%;
+        width: 130%;
 
     }
-    .box .selectBox .Don p{
+
+    .box .selectBox .Don p {
         position: relative;
-        width:inherit;
+        width: inherit;
         padding: 30px 20px;
         padding-bottom: 0;
     }
+
     .box .selectBox .Don {
         width: auto;
     }
@@ -406,8 +437,8 @@ export default {
     .box .selectBox .Don .hideClass .inputGroup {
         width: 100%;
         padding: 0;
-        padding-top:15px;
-        margin:0;
+        padding-top: 15px;
+        margin: 0;
         margin-bottom: 20px;
         height: 70px;
         min-height: fit-content;
@@ -416,7 +447,7 @@ export default {
 
     .box .selectBox .Don #other {
         width: 100%;
-margin:0;
+        margin: 0;
     }
 
     .box .selectBox .Don a.button1 {
@@ -424,6 +455,16 @@ margin:0;
         margin: 0.2em auto;
         padding: 10px 5px;
         margin-right: 20px;
+    }
+
+    .box .selectBox .Don a.HebrewTbutton {
+        margin: 10px 30px;
+    }
+
+    .box .selectBox .Don .HebrewTb {
+        text-align: center;
+        padding-right: 0;
+        padding-left: 170px;
     }
 }
 
