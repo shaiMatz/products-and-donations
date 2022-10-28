@@ -5,7 +5,7 @@ import en from '../views/HomeView.vue'
 import he from '../views/HomeView.vue'
 const routes = [
   {
-    path: '/HomeView',
+    path: '/',
     name: 'HomeView',
     component: HomeView
   },
@@ -13,6 +13,7 @@ const routes = [
     path: '/Payment',
     name: 'Payment',
     component: Payment
+    
   },
   {
     path: '/en',

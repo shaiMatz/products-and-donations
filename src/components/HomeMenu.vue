@@ -7,16 +7,6 @@
                     <img id="logo" src="../assets/amax1-removebg-preview.jpg">
                 </router-link>
             </div>
-            <!-- <div class="nav-links">
-                <ul v-show="!mobile">
-                    <div class="dropdown">
-                        <select v-model="$i18n.locale" class="dropbtn">
-                            <option value="en" @click="changeLangURL">English</option>
-                            <option value="he">עברית</option>
-                        </select>
-                    </div>
-                </ul>
-            </div> -->
             <div class="nav-links">
                 <ul v-show="!mobile">
                     <div class="dropdown">
@@ -48,7 +38,6 @@
 </template>
   
 <script>
-// import menuIcon from "../assets/Icons/bars-regular.svg";
 
 export default {
     name: "menu",
