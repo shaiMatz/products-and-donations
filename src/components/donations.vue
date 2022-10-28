@@ -71,7 +71,7 @@ export default {
         Payment
     },
     mounted() {
-        fetch("https://jaffawebapidev.amax.co.il/API/LandingPage/GetLandingPages4Products?urlAddr=d71b4c3b-c489-42b9-b8dd-6caa0168d1e2&paramkey=jdhdksajd~4lkhDskk*(kksKHH^7*223!!!$&PageGUID=23ddsadffdsfdsf")
+        fetch(process.env.VUE_APP_JSON_LINK)
             .then(res => res.json())
             .then(data => this.data = data.Data.LandingPages4Products_Donation_Items)
             .catch(err => console.log(err.message))
